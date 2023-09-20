@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Add Result</title>
+</head>
+<body>
+    {% if result["success"] %}
+    <p>New device added successfully.</p>
+    {% else %}
+    <p>Failed to add new device.</p>
+    {% endif %}
+    <a href="/">Back to Device List</a>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Search Result</title>
+</head>
+<body>
+    <h1>Search Result</h1>
+    {% if result["length"] > 0 %}
+    <table>
+        <thead>
+            <tr>
+                <th>Device ID</th>
+                <th>Device Name</th>
+                <th>Serial No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in result["data"] %}
+            <tr>
+                <td>{{ device["device_id"] }}</td>
+                <td>{{ device["device_name"] }}</td>
+                <td>{{ device["serial_no"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No result found.</p>
+    {% endif %}
+    <a href="/">Back to Device List</a>
+</body>
+</html>

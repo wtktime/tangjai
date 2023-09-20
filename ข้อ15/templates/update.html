@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>Update Result</title>
+</head>
+<body>
+    {% if result["success"] %}
+    <p>Device name updated successfully.</p>
+    {% else %}
+    <p>Failed to update device name.</p>
+    {% endif %}
+    <a href="/">Back to Device List</a>
+</body>
+</html>
+```
+
+- delete.html (หน้าแสดงผลการลบข้อมูลอุปกรณ์)
+
+```html
+<html>
+<head>
+    <title>Delete Result</title>
+</head>
+<body>
+    {% if result["success"] %}
+    <p>Device deleted successfully.</p>
+    {% else %}
+    <p>Failed to delete device.</p>
+    {% endif %}
+    <a href="/">Back to Device List</a>
+</body>
+</html>

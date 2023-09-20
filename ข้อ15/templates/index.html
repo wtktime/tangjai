@@ -1,0 +1,69 @@
+<html>
+<head>
+    <title>Device List</title>
+</head>
+<body>
+    <h1>Device List</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Device ID</th>
+                <th>Device Name</th>
+                <th>Serial No.</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for device in devices %}
+            <tr>
+                <td>{{ device["device_id"] }}</td>
+                <td>{{ device["device_name"] }}</td>
+                <td>{{ device["serial_no"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <h2>Search Device</h2>
+    <form method="POST" action="/search">
+        <label>Device ID:</label>
+        <input type="text" name="device_id"/>
+        <br>
+        <label>Device Name:</label>
+        <input type="text" name="device_name"/>
+        <br>
+        <label>Serial No.:</label>
+        <input type="text" name="serial_no"/>
+        <br>
+        <button type="submit">Search</button>
+    </form>
+    <h2>Update Device Name</h2>
+    <form method="POST" action="/update">
+        <label>Device ID:</label>
+        <input type="text" name="device_id"/>
+        <br>
+        <label>New Device Name:</label>
+        <input type="text" name="device_name"/>
+        <br>
+        <button type="submit">Update</button>
+    </form>
+    <h2>Delete Device</h2>
+    <form method="POST" action="/delete">
+        <label>Device ID:</label>
+        <input type="text" name="device_id"/>
+        <br>
+        <button type="submit">Delete</button>
+    </form>
+    <h2>Add New Device</h2>
+    <form method="POST" action="/add">
+        <label>Device ID:</label>
+        <input type="text" name="device_id"/>
+        <br>
+        <label>Device Name:</label>
+        <input type="text" name="device_name"/>
+        <br>
+        <label>Serial No.:</label>
+        <input type="text" name="serial_no"/>
+        <br>
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
